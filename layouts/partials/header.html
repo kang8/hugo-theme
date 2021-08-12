@@ -23,11 +23,12 @@
 
   {{- if isset .Site.Params "subtitle" }}
     <div id="title-description">
-    <p id="subtitle">{{ .Site.Params.Subtitle | markdownify }}</p>
+      <p id="subtitle">{{ .Site.Params.Subtitle | markdownify }}</p>
   {{- else }}
     <div id="title-social">
-    {{- end }}
-    {{- if isset .Site.Params "social" }}
+  {{- end }}
+
+  {{- if isset .Site.Params "social" }}
     <div id="social">
       <nav>
         <ul>
@@ -36,14 +37,13 @@
           <li><a href="{{ relURL $key.url }}"><i title="{{ $key.name }}" class="icons {{ $key.icon }}"></i></a></li>
           {{- else }}
           <li><a href="{{ $key.cmd }}"><i title="{{ $key.name }}" class="icons {{ $key.icon }}"></i></a></li>
-        {{- end }}
-
+          {{- end }}
         {{- end }}
         <li><a><i title="Switch Dark Mode" class="dark-mode icons fas fa-moon"></i></a></li>
         </ul>
       </nav>
     </div>
-    {{- end }}
+  {{- end }}
     </div>
 
   {{- if isset .Site.Menus "main" }}
