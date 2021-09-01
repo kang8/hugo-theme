@@ -23,21 +23,18 @@
           <article>
             <div class="matter">
               <h1 class="title">{{ .Title }}</h1>
-
               {{- if not .Params.hidemeta }}
                 <p class="post-meta">
                   {{ partial "post_meta.html" . }}
                 </p>
               {{- end }}
-
-            </div>
-
             </div>
 
             <div class="markdown">
               {{ .Content }}
             </div>
           </article>
+        </div>
 
         {{- if eq .Site.Params.comments.enabled true }}
           {{- $.Scratch.Set "comments" true }}

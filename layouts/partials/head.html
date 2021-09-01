@@ -84,8 +84,8 @@
 
   {{- if .Site.Params.customjs.enabled }}
     <script
-      {{ if eq .Site.Params.customjs.async true }} {{ "async" | safeHTMLAttr}}{{ end }}
-      {{ if eq .Site.Params.customjs.defer true }} {{ "defer" | safeHTMLAttr}}{{ end }}
+      {{ if eq .Site.Params.customjs.async true }} {{ "async" | safeHTMLAttr}} {{ end }}
+      {{ if eq .Site.Params.customjs.defer true }} {{ "defer" | safeHTMLAttr}} {{ end }}
       {{ if eq .Site.Params.customjs.nomodule true }} {{ "nomodule" | safeHTMLAttr}}{{ end }}
       {{ if isset .Site.Params.customjs "crossorigin" }} {{ printf "crossorigin=%q" .Site.Params.customjs.crossorigin | safeHTMLAttr }}{{ end }}
       {{ if isset .Site.Params.customjs "integrity" }} {{ printf "integrity=%q" .Site.Params.customjs.integrity | safeHTMLAttr }}{{ end }}
