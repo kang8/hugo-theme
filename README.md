@@ -1,9 +1,12 @@
 A fork of [hugo-vitae](https://github.com/dataCobra/hugo-vitae)
 
-
 ## Features
 
 All configuration options can be looked up in the [FEATURES.md](./FEATURES.md).
+
+## Modification
+
+* head line font-weight from 500 to 600.
 
 ## Credits
 
