@@ -4,7 +4,7 @@
       <div class="post">
         {{- if isset .Params "images" }}
           <div class="post-image">
-            <img src="{{ index .Params.images 0 | relURL }}" {{ if isset .Params "imagetext" }}alt="{{ .Params.imagetext }}"{{ end }}>
+            <img src="{{ index .Params.images 0 | relURL }}" {{ if isset .Params "imagetext" }} alt="{{ .Params.imagetext }}"{{ end }}>
           </div>
         {{- end }}
 
@@ -79,7 +79,11 @@
                 {{ partial "post_meta.html" . }}
               </p>
             {{- end }}
-            <span class="description">{{ if isset .Params "description" }}{{ .Description }}{{ else }}{{ .Plain | htmlUnescape | safeHTML | truncate 140 }}{{ end }}</span>
+            <span class="description">
+              {{ if isset .Params "description" }}
+                {{ .Description }}
+              {{ end }}
+            </span>
             </article>
           </div>
           </div>
