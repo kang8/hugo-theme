@@ -3,7 +3,7 @@
   {{- if .IsHome }}
     <title> {{ .Site.Title }}{{ if isset .Site.Params "pagetitle" }} - {{ .Site.Params.Pagetitle }} {{ end }} </title>
   {{- else }}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <title>{{ .Title }}</title>
   {{- end }}
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -109,7 +109,5 @@
 
   {{- partial "extend_head.html" . }}
 
-  {{ template "_internal/opengraph.html" . -}}
   {{ template "_internal/twitter_cards.html" . }}
-  {{ template "_internal/schema.html" . }}
 </head>

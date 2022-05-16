@@ -65,23 +65,8 @@
         {{- end -}}
         {{- end }}
         </div>
-      {{- if eq .Site.Params.comments.enabled true }}
-        {{- $.Scratch.Set "comments" true }}
 
-        {{- if and (isset .Params "type") (in .Site.Params.comments.disableOnTypes .Params.type) }}
-          {{- $.Scratch.Set "comments" false }}
-        {{- end }}
-
-        {{- if and (isset .Params "commentable") (eq .Params.commentable false) }}
-            {{- $.Scratch.Set "comments" false -}}
-          {{- else if and (isset .Params "commentable") (eq .Params.commentable true) }}
-            {{- $.Scratch.Set "comments" true }}
-        {{- end }}
-
-          {{- if eq ($.Scratch.Get "comments") true }}
-            {{- partial "comments.html" . }}
-          {{- end }}
-      {{- end }}
+      {{- partial "comments.html" . }}
     </article>
   </div>
 {{- end }}
